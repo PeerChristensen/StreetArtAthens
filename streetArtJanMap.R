@@ -2,11 +2,7 @@
 
 ### load libraries
 library(leaflet)
-#library(plyr)
-#library(data.table)
-#library(stringr)
 library(mapview)
-#library(png)
 
 ### load data
 df=read.csv2("streetArtDataJan.csv",stringsAsFactors =F,header = T)
@@ -53,6 +49,11 @@ athensMap
 
 
 ### unused code from earlier
+
+#library(plyr)
+#library(data.table)
+#library(stringr)
+#library(png)
 
 #setnames(df, old=c("Language..English..Greek..French..German.",
 #                   "Text.in.English..if.not.text.blank.",
