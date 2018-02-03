@@ -9,7 +9,7 @@ dat <- select(dat,
                FileName,
                GPSLongitude, GPSLatitude)
 
-write.csv(dat, 'newExifdata.csv',
+write.csv2(dat, 'newExifdata.csv',sep=",",
           row.names = F)
 
 
