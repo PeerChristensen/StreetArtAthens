@@ -5,7 +5,7 @@ library(leaflet)
 library(mapview)
 
 ### load data
-df=read.csv2("streetArtDataJan.csv",stringsAsFactors =F,header = T)
+df=read.csv2("streetArtUpdate1.csv",stringsAsFactors =F,header = T)
 
 ### change coordinates to numeric values
 df$Longitude=as.numeric(df$Longitude)
