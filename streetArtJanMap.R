@@ -12,18 +12,18 @@ df$Longitude=as.numeric(df$Longitude)
 df$Latitude=as.numeric(df$Latitude)
 
 ### create local and remote paths for loading images
-df$remotePath=paste0("http://i38.photobucket.com/albums/e146/PeerCHristensen/", 
-                  df$newFilename)
+df$remotePath=paste0("http://dev.humlab.lu.se/tmp/img/", 
+                  df$Filename)
 
-df$localPath = paste0("/Users/peerchristensen/Desktop/streetArtJan/streetArtDataJan/",
-                      list.files("streetArtDataJan"))
+#df$localPath = paste0("/Users/peerchristensen/Desktop/streetArtJan/streetArtDataJan/",
+#                      list.files("streetArtDataJan"))
 
 ### remove erroneous data
 #we remove one data point due to erroneous coordinates. Should they be latitude 37.72341 should be 37.92341?
 df=df[df$Title!="The Greek health system",] 
 
 #sample image
-img="https://upload.wikimedia.org/wikipedia/commons/8/81/Graffiti_London.jpg"
+#img="http://dev.humlab.lu.se/tmp/img/IMG00002_2013.jpg"
 
 ### create map
 athensMap <- leaflet() %>%
@@ -32,8 +32,8 @@ athensMap <- leaflet() %>%
   # add markers
   addAwesomeMarkers(lng=df$Longitude, lat=df$Latitude,
       # add popup with images and variables as text
-      popup=paste(popupImage(img, src = c("remote")),"<br>",
-                                "Title: ",paste("<a href=",img,">",df$Title,"</a>"),"<br>",
+      popup=paste(popupImage(df$remotePath, src = c("remote")),"<br>",
+                                "Title: ",paste("<a href=",df$remotePath,">",df$Title,"</a>"),"<br>",
                                 "Creator: ",df$Name_of_the_creator,"<br>",
                                 "Type: ",df$Pictorial_verbopictorial,"<br>",
                                 "Text: ",paste("'",df$Text,"'")),
