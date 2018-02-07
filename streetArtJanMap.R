@@ -12,18 +12,11 @@ df$Longitude=as.numeric(df$Longitude)
 df$Latitude=as.numeric(df$Latitude)
 
 ### create local and remote paths for loading images
-df$remotePath=paste0("http://dev.humlab.lu.se/tmp/img/", 
-                  df$Filename)
-
-#df$localPath = paste0("/Users/peerchristensen/Desktop/streetArtJan/streetArtDataJan/",
-#                      list.files("streetArtDataJan"))
+df$remotePath=paste0("http://dev.humlab.lu.se/tmp/img/",df$Filename)
 
 ### remove erroneous data
 #we remove one data point due to erroneous coordinates. Should they be latitude 37.72341 should be 37.92341?
 df=df[df$Title!="The Greek health system",] 
-
-#sample image
-#img="http://dev.humlab.lu.se/tmp/img/IMG00002_2013.jpg"
 
 ### create map
 athensMap <- leaflet() %>%
