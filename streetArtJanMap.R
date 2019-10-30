@@ -40,17 +40,3 @@ athensMap <- leaflet() %>%
 athensMap
 
 
-
-### unused code from earlier
-
-#library(plyr)
-#library(data.table)
-#library(stringr)
-#library(png)
-
-#setnames(df, old=c("Language..English..Greek..French..German.",
-#                   "Text.in.English..if.not.text.blank.",
-#                   "Pictorial..verbopictorial",
-#                   "Name.of.the.creator"), new=c("Language","Text","Type","Creator"))
-
-
